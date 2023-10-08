@@ -1,4 +1,0 @@
-::1 - - [03/Sep/2023:08:24:43 +0000] "GET /api/v1.0/client/auth HTTP/1.1" 404 159 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
-::1 - - [03/Sep/2023:08:25:22 +0000] "GET /api/v1.0/client/auth HTTP/1.1" 404 159 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
-::1 - - [03/Sep/2023:08:25:35 +0000] "GET /api/v1.0/client/auth HTTP/1.1" 404 159 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
-::1 - - [03/Sep/2023:08:30:58 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
