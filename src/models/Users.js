@@ -8,15 +8,14 @@ const userSchema = new Schema(
   {
     firstName: { type: String, required: true, maxLength: 50 },
     lastName: { type: String, required: true, maxLength: 50 },
+    username: { type: String, required: true, maxLength: 50},
     email: {
       type: String, required: true, maxLength: 50, unique: true,
     },
     password: { type: String },
     avatar: { type: String },
-    authType: { type: String, default: 'local' },
     authGoogleId: { type: String },
     authFacebookId: { type: String },
-    isVerify: { type: Boolean, default: false },
   },
   {
     timestamps: true,
