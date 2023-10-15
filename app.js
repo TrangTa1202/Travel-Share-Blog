@@ -18,9 +18,7 @@ mongoose.connection.on('error', (err) => {
     console.error(`Unable to connect to database: ${err.toString()}`);
 
     mongoose.connect(process.env.DB_URL, {
-      autoIndex: false,
       useNewUrlParser: true,
-      useFindAndModify: false,
       useUnifiedTopology: true,
     });
   }
