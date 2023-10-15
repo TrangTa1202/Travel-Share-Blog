@@ -7,12 +7,6 @@ module.exports = {
         firstName, lastName, username, email, password,
       } = req.body;
 
-      const user = await User.findOne({ email });
-
-      if (user) {
-        return res.status(400).json({ message: 'Email already exists' });
-      }
-
       await User.create({
         firstName, lastName, username, email, password,
       });

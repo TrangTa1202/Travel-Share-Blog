@@ -4,11 +4,14 @@ const { Schema } = mongoose;
 
 const postsSchema = new Schema(
   {
-    title: { type: String ,required: true, maxLength: 200 },
-    content: { type: String, required: true, maxLength: 1000 },
-    images: {
-      type: String, required: true,
-    },
+    title: { type: String, required: true, maxLength: 200 },
+    content: { type: String, required: true, maxLength: 20000 },
+    images: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
     author: { type: Schema.Types.ObjectId, ref: 'users' },
   },
   {
