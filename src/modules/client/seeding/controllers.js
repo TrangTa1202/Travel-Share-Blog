@@ -39,10 +39,15 @@ module.exports = {
           images.push(faker.image.imageUrl());
         }
 
+        const totalLikes = Math.floor(Math.random() * 10) + 1;
+        const totalComments = Math.floor(Math.random() * 100) + 1;
+
         const post = {
           title: faker.lorem.sentence(),
           content: faker.lorem.paragraphs(40),
           images,
+          totalLikes,
+          totalComments,
           author: user._id,
         };
 

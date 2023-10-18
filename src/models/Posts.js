@@ -12,6 +12,8 @@ const postsSchema = new Schema(
         required: true,
       },
     ],
+    totalLikes: { type: Number, default: 0 },
+    totalComments: { type: Number, default: 0 },
     author: { type: Schema.Types.ObjectId, ref: 'users' },
   },
   {
