@@ -50,4 +50,68 @@ module.exports = {
       .isLength({ min: 6 })
       .withMessage('Password must be at least 6 characters'),
   ],
+
+  checkLogin: [
+    body('email')
+      .trim()
+      .notEmpty()
+      .withMessage('Email is required')
+      .isEmail()
+      .withMessage('Email is invalid'),
+    body('password')
+      .trim()
+      .notEmpty()
+      .withMessage('Password is required')
+      .isLength({ min: 6 })
+      .withMessage('Invalid Password'),
+  ],
+
+  checkForgotPassword: [
+    body('email')
+      .trim()
+      .notEmpty()
+      .withMessage('Email is required')
+      .isEmail()
+      .withMessage('Email is invalid'),
+  ],
+
+  checkVerifyCode: [
+    body('code')
+      .trim()
+      .notEmpty()
+      .withMessage('code is required')
+      .isLength({ min: 6, max: 6 })
+      .withMessage('Code is invalid'),
+    body('email')
+      .trim()
+      .notEmpty()
+      .withMessage('Email is required')
+      .isEmail()
+      .withMessage('Email is invalid'),
+  ],
+
+  checkResetPassword: [
+    body('code')
+      .trim()
+      .notEmpty()
+      .withMessage('code is required')
+      .isString()
+      .withMessage('Code is invalid')
+      .isLength({ min: 6, max: 6 })
+      .withMessage('Code is invalid'),
+    body('email')
+      .trim()
+      .notEmpty()
+      .withMessage('Email is required')
+      .isEmail()
+      .withMessage('Email is invalid'),
+    body('password')
+      .trim()
+      .isString()
+      .withMessage('Password is invalid')
+      .notEmpty()
+      .withMessage('Password is required')
+      .isLength({ min: 6 })
+      .withMessage('Password is invalid'),
+  ],
 };

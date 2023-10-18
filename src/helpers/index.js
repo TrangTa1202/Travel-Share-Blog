@@ -1,15 +1,21 @@
-const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
-  validate: async (req, res, next) => {
-    const result = validationResult(req);
-    if (result.isEmpty()) {
-      return next();
+
+  signToken: (id, email) => jwt.sign({ user_id: id, email }, process.env.JWT_SECRET, {
+    expiresIn: '1d',
+  }),
+
+  generateUniqueCode: () => {
+    let code = '';
+
+    while (code.length < 6) {
+      const randomNumber = Math.floor(Math.random() * 10).toString();
+      if (!code.includes(randomNumber)) {
+        code += randomNumber;
+      }
     }
 
-    return res.status(400).json({
-      message: 'validate errors',
-      payload: result.array({ onlyFirstError: true }),
-    });
+    return code;
   },
 };
