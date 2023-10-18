@@ -16,7 +16,13 @@ module.exports = {
 
   Guard: (req, res, next) => {
     try {
-      const token = req.headers.authorization.split(' ')[1];
+      const authorizationHeader = req.headers.authorization;
+
+      if (!authorizationHeader || !authorizationHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Unauthorized' });
+      }
+
+      const token = authorizationHeader.split(' ')[1];
 
       if (!token || !token.length) {
         return res.status(401).json({ message: 'Unauthorized' });

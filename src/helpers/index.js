@@ -18,4 +18,14 @@ module.exports = {
 
     return code;
   },
+
+  fuzzySearch: (searchValue) => {
+    if (!searchValue) {
+      return null;
+    }
+
+    const regex = new RegExp(searchValue, 'i');
+    return regex;
+  },
+
 };
