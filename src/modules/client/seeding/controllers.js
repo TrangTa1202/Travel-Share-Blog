@@ -10,6 +10,7 @@ module.exports = {
           lastName: faker.name.lastName(),
           username: faker.internet.userName(),
           email: faker.internet.email(),
+          avatar: faker.image.imageUrl(),
           password: faker.internet.password(),
 
         });
@@ -76,7 +77,7 @@ module.exports = {
 
         const comment = {
           comment: faker.lorem.paragraph(),
-          author: user._id,
+          user: user._id,
           post: post._id,
         };
 
